@@ -1,73 +1,87 @@
 import React, { useState } from "react";
-import axios from "axios";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
+import "bootstrap/dist/css/bootstrap.min.css";
+import EdaGraphs from "./components/EdaGraphs";
+import ModelComparison from "./components/ModelComparison";
+import ConfusionMatrix from "./components/ConfusionMatrix";
+import RocCurve from "./components/RocCurve";
 
-const API_URL = import.meta.env.VITE_API_URL;
+export default function App() {
+  const [inputs, setInputs] = useState({
+    V1: "",
+    V4: "",
+    V12: "",
+    V14: "",
+    Amount: ""
+  });
+  const [result, setResult] = useState("");
+  const [probability, setProbability] = useState(null);
 
-function App() {
-  const [input, setInput] = useState("");
-  const [result, setResult] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const handleChange = (e) => {
+    setInputs({ ...inputs, [e.target.name]: e.target.value });
+  };
 
-  const handlePredict = async () => {
-    const features = input.split(",").map((x) => parseFloat(x.trim()));
-    setLoading(true);
-    try {
-      const res = await axios.post(`${API_URL}/explain`, { features });
-      setResult(res.data);
-    } catch (err) {
-      alert("Error calling backend — check console.");
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setResult("Loading...");
+    setProbability(null);
+
+    const res = await fetch("http://127.0.0.1:5000/predict", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(inputs),
+    });
+    const data = await res.json();
+    setResult(data.prediction || data.error);
+    setProbability(data.probability || null);
   };
 
   return (
-    <div style={{ padding: 24, maxWidth: 900, margin: "auto" }}>
-      <h1>💳 Fraud Detection App</h1>
-      <p>Enter features (comma separated):</p>
-      <textarea
-        rows="4"
-        style={{ width: "100%" }}
-        placeholder="e.g. 0.1, -0.3, 1.5, ..."
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-      />
-      <br />
-      <button onClick={handlePredict} disabled={loading}>
-        {loading ? "Predicting..." : "Predict"}
-      </button>
+    <div className="container py-4">
+      <h2 className="text-center text-primary mb-4">Fraud Detection Dashboard</h2>
 
-      {result && (
-        <div style={{ marginTop: 30 }}>
-          <h3>
-            Prediction:{" "}
-            {result.prediction === 1 ? "⚠️ Fraudulent" : "✅ Legitimate"}
-          </h3>
-          <p>
-            Probability: {(result.probability * 100).toFixed(2)}%
-          </p>
+      <div className="card p-4 shadow-sm mb-5">
+        <h5>💳 Enter Transaction Details</h5>
+        <form onSubmit={handleSubmit}>
+          {["V1", "V4", "V12", "V14", "Amount"].map((v) => (
+            <div key={v} className="mb-3">
+              <label className="form-label">{v}</label>
+              <input
+                type="number"
+                step="any"
+                name={v}
+                className="form-control"
+                value={inputs[v]}
+                onChange={handleChange}
+                required
+              />
+            </div>
+          ))}
+          <button className="btn btn-primary w-100">Predict</button>
+        </form>
 
-          {result.top_features && (
-            <>
-              <h4>Top contributing features</h4>
-              <div style={{ height: 300 }}>
-                <ResponsiveContainer>
-                  <BarChart data={result.top_features}>
-                    <XAxis dataKey="feature" />
-                    <YAxis />
-                    <Tooltip />
-                    <Bar dataKey="impact" fill="#8884d8" />
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
-            </>
-          )}
-        </div>
-      )}
+        {result && (
+          <div
+            className={`alert mt-3 text-center ${
+              result.includes("Fraudulent") ? "alert-danger" : "alert-success"
+            }`}
+          >
+            <strong>{result}</strong>
+            {probability !== null && (
+              <p className="mb-0">💯 Fraud Probability: {probability}%</p>
+            )}
+          </div>
+        )}
+      </div>
+
+      {/* Dashboard Tabs */}
+      <EdaGraphs />
+      <ModelComparison />
+      <ConfusionMatrix />
+      <RocCurve />
+
+      <p className="text-muted mt-4 small">
+        💡 Features used: V1, V4, V12, V14, and Amount — the most influential for fraud detection.
+      </p>
     </div>
   );
 }
-
-export default App;
