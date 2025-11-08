@@ -1,5 +1,5 @@
 import React from "react";
-import matrixImage from "../assets/1.jpeg"; // ✅ import the image
+import matrixImage from "../assets/2.jpeg"; // ✅ import the image
 
 export default function ConfusionMatrix() {
   return (
