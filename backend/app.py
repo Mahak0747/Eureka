@@ -4,7 +4,7 @@ import numpy as np
 import pickle
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": ["https://eureka-zu4b.vercel.app"]}})
 
 # Load your trained model
 with open("model.pkl", "rb") as f:
