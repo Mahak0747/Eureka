@@ -7,7 +7,7 @@ import LiveDemo from "./components/LiveDemo";
 import ConfusionMatrix from "./components/ConfusionMatrix";
 import EDA from "./components/EDA";
 import ModelComparison from "./components/ModelComparison";
-import ROCCurve from "./components/ROCCurve";
+import ROC from "./components/ROC";
 import Explainability from "./components/Explainability";
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
           <Route path="ConfusionMatrix" element={<ConfusionMatrix />} />
           <Route path="EDA" element={<EDA />} />
           <Route path="ModelComparison" element={<ModelComparison />} />
-          <Route path="ROCCurve" element={<ROCCurve />} />
+          <Route path="ROC" element={<ROC />} />
           <Route path="Explainability" element={<Explainability />} />
         </Route>
       </Routes>

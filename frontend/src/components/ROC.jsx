@@ -2,7 +2,7 @@ import React from "react";
 import matrixImage from "../assets/4.jpeg"; // ✅ import the image
 import matrixImage2 from "../assets/4.2.jpeg"; // ✅ import the image
 
-export default function ROCCurve() {
+export default function ROC() {
   return (
     <div className="card mb-4 p-3">
       <h5>📈 ROC Curve</h5>
