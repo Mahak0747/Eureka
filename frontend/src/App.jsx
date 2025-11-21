@@ -19,7 +19,7 @@ function App() {
           <Route path="ConfusionMatrix" element={<ConfusionMatrix />} />
           <Route path="EDA" element={<EDA />} />
           <Route path="ModelComparison" element={<ModelComparison />} />
-          <Route path="ROC" element={<ROC />} />
+          <Route path="ModelEvaluation" element={<ROC />} />
           <Route path="Explainability" element={<Explainability />} />
         </Route>
       </Routes>

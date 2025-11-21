@@ -34,7 +34,7 @@ const menuItems = [
   { text: 'Confusion Matrix', icon: <SpaceDashboardOutlined />, path: '/ConfusionMatrix' },
   { text: 'EDA', icon: <LibraryBooksOutlined />, path: '/EDA' },
   { text: 'Model Comparison', icon: <FactCheckOutlined />, path: '/ModelComparison' },
-  { text: 'Model Evaluation', icon: <TaskOutlined />, path: '/ROCCurve' },
+  { text: 'Model Evaluation', icon: <TaskOutlined />, path: '/ModelEvaluation' },
   { text: 'Explainability', icon: <TaskOutlined />, path: '/Explainability' }
 ];
 
