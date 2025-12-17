@@ -111,7 +111,7 @@ The trained model was exported and integrated into a full-stack web application:
 This ensures smooth end-to-end functionality—from transaction input to prediction and explanation.
 
 ### 🔴 Live Fraud Detection Dashboard
-<img width="1900" height="862" alt="Image" src="https://github.com/user-attachments/assets/7eaeb2a5-dbf1-4d80-9571-53146863b18d" alt="[Eureka Web App](https://eureka-zu4b.vercel.app/)"/>
+<img width="1900" height="862" alt="Image" src="https://github.com/user-attachments/assets/7eaeb2a5-dbf1-4d80-9571-53146863b18d"/>
 
 ---
 
