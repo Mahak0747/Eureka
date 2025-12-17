@@ -16,7 +16,10 @@ The solution uses **XGBoost** for robust prediction, **SHAP** for explainability
 
 ## 📂 Dataset
 
-The project uses the **Credit Card Fraud Detection Dataset** from Kaggle.
+This project uses the **Credit Card Fraud Detection Dataset** from Kaggle.
+
+🔗 **Dataset Link:**  
+https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
 
 **Dataset highlights:**
 - Real European credit card transaction data
@@ -37,6 +40,10 @@ The following preprocessing steps were applied to prepare the data for modeling:
 - Conducted **Exploratory Data Analysis (EDA)** to analyze fraud distribution and feature behavior
 - Applied **SMOTE** to handle severe class imbalance
 - Split the dataset into training and testing sets
+
+### Exploratory Data Analysis (EDA)
+<img width="537" height="452" alt="Image" src="https://github.com/user-attachments/assets/99565b0b-3ea4-4c45-89c5-573d6db6a7f2" />
+<img width="537" height="257" alt="Image" src="https://github.com/user-attachments/assets/0abe5e5d-8201-4df3-9140-d5ee981640bc" />
 
 ---
 
@@ -63,6 +70,9 @@ SHAP enables:
 
 This improves trust, transparency, and accountability—critical factors in financial applications.
 
+### SHAP Summary Plot 
+<img width="537" height="572" alt="Image" src="https://github.com/user-attachments/assets/e82a8386-99c1-4e5b-91b9-5108a471dc4a" />
+
 ---
 
 ## 📊 Model Evaluation
@@ -78,6 +88,15 @@ The model was evaluated using multiple metrics:
 
 Given the imbalanced nature of the dataset, **Recall and ROC-AUC** were prioritized over raw accuracy.
 
+### Confusion Matrix
+<img width="535" height="390" alt="Image" src="https://github.com/user-attachments/assets/3d4ff52b-795a-46e4-bcea-61bd290dce01" />
+
+### Precision–Recall Curve
+<img width="531" height="367" alt="Image" src="https://github.com/user-attachments/assets/f1d0bf55-4816-4a37-ae57-8ed3db8f73e9" />
+
+### ROC Curve
+<img width="542" height="350" alt="Image" src="https://github.com/user-attachments/assets/06060711-861f-47e8-b1ab-ed93d0b1813d" />
+
 ---
 
 ## 🌐 Web Application & Deployment
@@ -90,6 +109,9 @@ The trained model was exported and integrated into a full-stack web application:
 - **Packaging:** The complete application was packaged and delivered as an **APK**
 
 This ensures smooth end-to-end functionality—from transaction input to prediction and explanation.
+
+### 🔴 Live Fraud Detection Dashboard
+<img width="1900" height="862" alt="Image" src="https://github.com/user-attachments/assets/7eaeb2a5-dbf1-4d80-9571-53146863b18d" alt="[Eureka Web App](https://eureka-zu4b.vercel.app/)"/>
 
 ---
 
