@@ -1,6 +1,14 @@
 # 💳 Eureka – AI-Powered Explainable Credit Card Fraud Detection
 
-### 🔍 XGBoost • SHAP • SMOTE • PCA Dataset • Flask • React (Vite)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![XGBoost](https://img.shields.io/badge/XGBoost-Model-orange)
+![SHAP](https://img.shields.io/badge/SHAP-Explainability-green)
+![SMOTE](https://img.shields.io/badge/SMOTE-Imbalance%20Handling-yellow)
+![Flask](https://img.shields.io/badge/Backend-Flask-black)
+![React](https://img.shields.io/badge/Frontend-React%20(Vite)-61DAFB)
+![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)
+![Status](https://img.shields.io/badge/Status-Completed-success)
+
 
 An end-to-end **AI-powered fraud detection system** designed to identify fraudulent credit card transactions while providing **clear, human-understandable explanations** for every prediction. The system combines a high-performance machine learning model with Explainable AI (XAI) techniques and is deployed as a **full-stack web application**.
 
