@@ -1,4 +1,4 @@
-# 🚀 Eureka – AI-Powered Explainable Credit Card Fraud Detection
+# 💳 Eureka – AI-Powered Explainable Credit Card Fraud Detection
 
 ### 🔍 XGBoost • SHAP • SMOTE • PCA Dataset • Flask • React (Vite)
 
