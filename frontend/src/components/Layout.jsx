@@ -25,7 +25,6 @@ const Layout = () => {
           p: 4,
           mt: '50px',
           transition: 'margin 0.3s ease',
-          // marginLeft: drawerOpen ? `${drawerWidth}px` : '60px',
           backgroundColor: '#f7f8fb',
           minHeight: 'calc(100vh - 50px)',
         }}
