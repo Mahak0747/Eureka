@@ -21,7 +21,7 @@ export default function App() {
     setResult("Loading...");
     setProbability(null);
 
-    const res = await fetch("https://frauddetection-jyqu.onrender.com/predict", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/predict`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(inputs),

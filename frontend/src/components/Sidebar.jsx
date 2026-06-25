@@ -75,7 +75,7 @@ const Sidebar = ({ open }) => {
           if (!item.submenu) {
             return (
               <ListItem
-                button
+                component="button"
                 key={item.text}
                 onClick={() => item.path && navigate(item.path)}
                 selected={isSelected(item.path)}
@@ -118,7 +118,7 @@ const Sidebar = ({ open }) => {
           return (
             <React.Fragment key={item.text}>
               <ListItem
-                button
+                component="button"
                 onClick={handleAdminClick}
                 sx={{
                   py: 1.2,
@@ -152,7 +152,7 @@ const Sidebar = ({ open }) => {
                 <List component="div" disablePadding sx={{ pl: 1.5 }}>
                   {item.submenu.map((sub) => (
                     <ListItem
-                      button
+                      component="button"
                       key={sub.text}
                       onClick={() => sub.path && navigate(sub.path)}
                       selected={isSelected(sub.path)}

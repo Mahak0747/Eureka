@@ -42,7 +42,7 @@ const Appbar = ({ toggleDrawer, drawerOpen, drawerWidth }) => {
           >
             <MenuIcon />
           </IconButton>
-          <h1 class="display-6">Eureka</h1>
+          <h1 className="display-6">Eureka</h1>
         </Box>
       </Toolbar>
     </AppBar>
